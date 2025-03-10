@@ -181,6 +181,7 @@ section.sidebar{
     border-radius: 17.5px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .sidebarBtn i{
