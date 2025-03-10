@@ -1,0 +1,690 @@
+/* boilerPlate */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 100ms linear;
+    font-family: "Lobster Two", serif;
+}
+
+:root{
+    --bgC: #202124;
+    --transBgc:hsla(225, 6%, 13%, 0.5);
+    --txtC: #f1f1f1;
+    --transTxtC: hsla(0, 0%, 95%, 0.5);
+    --secBgC: rgb(45, 46, 49);
+    --tertBgC: rgb(60, 64, 67);
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background-color: var(--bgC);
+    color: var(--txtC);
+}
+
+/* navigation bar */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    border-radius: 0 0 25px 25px;
+    /* box-shadow: 0 0 15px -14px var(--txtC); */
+    /* flex-wrap: wrap; */
+    padding: 10px;
+    /* background-color: #2d2f31; */
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.logo>p{
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 0.15rem;
+    margin-bottom: -5px;
+}
+
+.tagLine{
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shayari{
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.shayari span{
+    font-size: 1.5rem;
+}
+
+.englishShayari{
+    display: none;
+}
+
+.shayari:hover ~ .englishShayari{
+    display: block!important;
+}
+
+.hindiShayari:hover{
+    display: none !important;
+}
+
+.englishShayari:hover ~ .hindiShayari{
+    display: none;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.menu i{
+    padding: 10px;
+   
+}
+
+.menu i.ri-moon-fill{
+    transform: rotate(0deg);
+    transition: rotate 1s linear ;
+}
+
+.menu i.ri-sun-fill{
+    /* display: none; */
+    position: absolute;
+    top: -22%;
+    left: 2%;
+    scale: 1.5;
+    opacity: 0;
+    transform: rotate(-360deg);
+    transition: rotate 1s linear;
+}
+
+label[for="theme"]{
+    position: relative;
+}
+
+input#theme{
+    display: none;
+}
+
+section.sidebar{
+    position: fixed;
+    height: 100%;
+    width: min(350px, 100%);
+    right: -100%;
+    top: 0;
+    background-color: red;
+    z-index: 10;
+    background-color: var(--transBgC);
+    backdrop-filter: blur(40px);
+    padding: 20px;
+    font-weight: 800;
+    transition: 500ms all ease-out;
+}
+
+.sidebarHeading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px ;
+    /* font-weight: 800; */
+}
+
+.sidebarHeadingText{
+    font-size: 1.5rem;
+}
+
+.sidebarHeading i{
+    font-size: 1.25rem;
+}
+
+.sidebarBtn{
+    background-color: rgba(128, 128, 128, 0.25);
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    border-radius: 17.5px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebarBtn i{
+    font-size: 1.5rem;
+}
+
+/* playing body  */
+
+section.homePage, section.announcerPage, section.participantPage, section.rulePage, section.howToPlayPage, section.about{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.container{
+    width: min(90%, 1080px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2%;
+    background-color: var(--secBgC);
+    border-radius: 25px;
+    margin: 25px 0;
+}
+
+.containerHeading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.containerHeading p{
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.choices{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2%;
+    height: 100%;
+}
+
+.choice1, .choice2{
+    position: relative;
+    display: flex;
+    /* padding: 2%; */
+    margin: 10px;
+    /* width: 45%; */
+    max-width: max(40%,240px);
+    min-width: max(40%,240px);
+    height: 40vh;
+    overflow: hidden;
+    /* background-color: #fff; */
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.choice1 .bgImg{
+    background: url(assets/images/announcerOfTambola.png);
+    background-size: cover;
+    background-position: center;
+}
+.choice2 .bgImg{
+    background: url(assets/images/participantOfTambola.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.bgImg{
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease-in-out;
+}
+
+.text{
+    position: absolute;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    color:#f1f1f1
+}
+
+.text::-webkit-scrollbar{
+    display: none;
+}
+
+.textHeading{
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.choice1:hover > .bgImg{
+    scale: 1.25;
+}
+.choice2:hover > .bgImg{
+    scale: 1.25;
+}
+
+footer{
+    background-color: var(--secBgC);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+footer i{
+    color: crimson;
+}
+
+/* announcer page  */
+
+section.announcerPage, section.participantPage, section.about, section.howToPlayPage, section.rulePage{
+    display: none;
+}
+.announcedNumberContainer{
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--tertBgC);
+    border-radius: 25px;
+}
+
+.announcedNumberContainer p.announcedNumber{
+    font-size: 3rem;
+}
+
+.announcedNumberContainer .buttons button.nextNumberBtn{
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline:none;
+    color: var(--secBgC);
+    background-color: var(--txtC);
+    border: none;
+    margin: 20px;
+}
+
+.announcedNumberContainer .buttons button.nextNumberBtn:hover{
+    background-color: var(--secBgC);
+    color: var(--txtC);
+}
+
+button.newGameBtn{
+    background-color: transparent;
+    color: var(--txtC);
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--txtC);
+    margin: 20px;
+}
+
+button.newGameBtn:hover{
+    background-color: var(--txtC);
+    color: var(--secBgC);
+}
+
+button.newGameBtn:active{
+    background-color: var(--bgc);
+    color: var(--txtc);
+}
+
+.numbers{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(10,9%);
+    grid-template-rows: repeat(9,10%);
+    gap: 1%;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+.number{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tertBgC) ;
+    border-radius: 50%;
+}
+
+.addPlayers{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.addPlayers>input{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--txtC);
+    border-radius: 15px;
+    font-size: 1rem;
+    margin: 10px;
+    border: none;
+    outline: 1px solid grey;
+}
+
+
+
+.addPlayers button{
+    text-wrap: nowrap;
+    height: 100%;
+    color: var(--txtC);
+    border-radius: 15px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #588157;
+    margin: 10px;
+    border: 1px solid #588157;
+}
+
+p.warning{
+    color: gray;
+    margin: auto;
+    font-size: 0.75rem;
+}
+
+p.redWarning{
+    color: red;
+    text-align: center;
+}
+
+.addPlayers button:hover{
+    background-color: var(--secBgC);
+}
+
+.players{
+    padding: 2%;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.players details{
+    background-color: var(--tertBgC);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+details summary::-webkit-details-marker{
+    display: none;
+}
+
+details summary {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+details summary .removeBtn{
+    padding: 5px 20px;
+    margin: 10px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    /* color: #f1f1f1; */
+    font-weight: 700;
+    background-color: #751e23;
+    border: 2px solid #751e23;
+    color: #f1f1f1;
+}
+
+details summary .removeBtn:hover{
+    background-color: transparent;
+}
+
+details p{
+    background-color: var(--bgC);
+}
+
+.claimContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.claims{
+    padding: 5px 0;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.claim{
+    padding: 5px 20px;
+    margin: 10px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    /* color: #f1f1f1; */
+    font-weight: 700;
+    opacity: 1;
+}
+
+.count{
+    color:green
+}
+
+.c1 .claim{
+    background-color: #5b2333;
+    color:#f7f4f3
+}
+
+.c2 .claim{
+    background-color: #50c9ce;
+    color: #2e382e;
+}
+
+.c3 .claim{
+    background-color: #b24c63;
+    color: #ffdafc;
+}
+
+.c4 .claim{
+    background-color: #5438dc;
+    color: #f7f4f3;
+}
+
+.c5 .claim{
+    color: #e2f3f4;
+    background-color: #6dc7d1;
+}
+
+.c6 .claim{
+    background-color: #928dab;    
+    color: #1f1c2c;
+   
+}
+
+.playerRemoveBtn{
+    border-radius: 100%;
+    padding: 10px 15px;
+    border: none;
+    background-color: #751e23;
+    color: #f1f1f1;
+}
+
+.universalWarning{
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    border-radius: 250px;
+    /* padding: 2px; */
+    left:50%;
+    top: -100px;
+    transform: translate(-50%,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease-out;
+}
+
+.warningLogo{
+    color: crimson;
+    font-size: 1.75rem;
+    margin: 3px 1px 3px 5px;
+}
+
+.universalWarningText{
+    margin: 3px 5px 3px 1px;
+    /* font-size: 1.5rem; */
+}
+
+button{
+    cursor: pointer;
+}
+
+.tickets{
+    display: none;
+}
+
+.ticketCountContainer{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+select#numberOfTickets{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--tertBgC);
+    color: var(--txtc);
+    border: none;
+}
+
+.ticketCountContainer button{
+    background-color: #588157;
+    border-radius: 25px;
+    border: 2px solid #588157;
+    color: var(--txtC);
+    padding: 5px 10px;
+    font-size: 1.05rem;
+}
+
+.ticketCountContainer button:hover{
+    background-color: transparent;
+}
+
+.ticket1, .ticket2, .ticket3, .ticket4{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* .ticket1, .ticket2, .ticket3, .ticket4{
+    display: none;
+} */
+
+.ticketNumbers{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(3,auto);
+    aspect-ratio: 9/3;
+    margin: 10px 0;
+    border: 1px solid var(--txtC);
+}
+
+.ticketNumber{
+    border: 1px solid var(--txtC);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1;
+    font-size: 150%;
+}
+
+.rulesContent, .howToPlayContent{
+    padding: 15px;
+}
+
+ol{
+    padding: 0 5px;
+    font-weight: 700;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    
+}
+
+ol>li{
+    padding: 20px 0;
+}
+
+ul{
+    padding: 5px 15px;
+    font-weight: 300;
+}
+
+li{
+    padding: 2px 0;
+}
+
+.aboutContent{
+    padding: 10px 15px;
+}
+.aboutContent{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+@media only screen and (max-width:900px){
+    nav{
+        flex-wrap: wrap;
+    }
+    .menu{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

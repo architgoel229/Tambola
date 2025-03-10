@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambola - A Full Family Friendly Game</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="universalWarning">
+      <div class="warningLogo">
+        <i class="ri-error-warning-fill"></i>
+      </div>
+      <div class="universalWarningText">
+        Error will go Here
+      </div>
+    </div>
+    <input type="checkbox" name="theme" id="theme" />
+    <nav>
+      <!-- <div class="navContent"> -->
+      <div class="logo" onclick="window.location.reload();">
+        <p>Tambola</p>
+        <div class="tagLine">
+          <p>• A Full Family Friendly Game •</p>
+        </div>
+      </div>
+      <div class="shayari hindiShayari">
+        <p>
+          <span class="invertedStart">“</span> Tambola ka jadoo, yaaron ka pyar,
+          Har number mein chhupi khushiyon ki bahar.
+        </p>
+        <p>
+          Shaam ki mehefil, jeetne ka jazba badhaye, Tambola ki shaam, sabko
+          khushiyan de jaaye. <span class="invertedEnd">”</span>
+        </p>
+      </div>
+      <div class="shayari englishShayari">
+        <p>
+          <span class="invertedStart">“</span> The magic of Tambola, friends so
+          dear, In every number, happiness is near.
+        </p>
+        <p></p>
+        <p>
+          The evening's gathering, winning's fire ignites, The Tambola night,
+          with joya & delights. <span class="invertedEnd">”</span>
+        </p>
+      </div>
+      <!-- </div> -->
+      <div class="menu">
+        <label for="theme">
+          <i class="ri-moon-fill"></i>
+          <i class="ri-sun-fill"></i>
+        </label>
+        <i class="ri-menu-line" onclick="showSidebar()"></i>
+      </div>
+    </nav>
+    <section class="sidebar">
+      <div class="sidebarHeading">
+        <div class="sidebarHeadingText">Menu</div>
+        <i class="ri-close-large-line" onclick="hideSidebar();"></i>
+      </div>
+      <div class="sidebarHomeBtn sidebarBtn" onclick="homePage();">
+        <i class="ri-home-fill"></i>
+        &nbsp; &nbsp;Home
+      </div>
+      <div class="sidebarRulesBtn sidebarBtn" onclick="rulePage();">
+        <i class="ri-todo-fill"></i>&nbsp; &nbsp;Rules
+      </div>
+      <div class="sidebarHowToPlayBtn sidebarBtn" onclick="howToPlayPage();">
+        <i class="ri-play-circle-fill"></i>&nbsp; &nbsp;How to play?
+      </div>
+      <div class="sidebarAboutBtn sidebarBtn" onclick="aboutPage();">
+        <i class="ri-information-2-fill"></i>&nbsp; &nbsp;About
+      </div>
+    </section>
+    <section class="homePage">
+      <div class="container">
+        <div class="containerHeading">
+          <p>Choose your role</p>
+        </div>
+        <div class="choices">
+          <div class="choice1" onclick="announcerPage()">
+            <div class="bgImg"></div>
+            <div class="text">
+              <div class="textHeading">Announcer</div>
+              <div class="textDescription">
+                <p>
+                  The Tambola announcer calls out numbers, sets the game's pace,
+                  verifies wins (sometimes), and often entertains, ensuring a
+                  fun and fair experience for players.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="choice2" onclick="participantPage()">
+            <div class="bgImg"></div>
+            <div class="text">
+              <div class="textHeading">Participants</div>
+              <div class="textDescription">
+                <p>
+                  Tambola participants, or players, purchase numbered tickets
+                  and mark off matching numbers as they're called. The goal is
+                  to achieve specific patterns (lines, full house, etc.) to win
+                  prizes. They rely on the announcer and the luck of the draw.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="announcerPage">
+      <div class="container">
+        <div class="containerHeading">
+          <p>Numbers</p>
+        </div>
+        <div class="announcedNumberContainer">
+          <p class="announcedNumber">XX</p>
+          <p class="quote">the announced number teasing quote will go here</p>
+          <div class="buttons">
+            <button class="nextNumberBtn" onclick="rollANumber(); hide();">Next Number</button>
+            <button class="newGameBtn" onclick="reset(); show();">New Game</button>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="number1 number">1</div>
+          <div class="number2 number">2</div>
+          <div class="number3 number">3</div>
+          <div class="number4 number">4</div>
+          <div class="number5 number">5</div>
+          <div class="number6 number">6</div>
+          <div class="number7 number">7</div>
+          <div class="number8 number">8</div>
+          <div class="number9 number">9</div>
+          <div class="number10 number">10</div>
+          <div class="number11 number">11</div>
+          <div class="number12 number">12</div>
+          <div class="number13 number">13</div>
+          <div class="number14 number">14</div>
+          <div class="number15 number">15</div>
+          <div class="number16 number">16</div>
+          <div class="number17 number">17</div>
+          <div class="number18 number">18</div>
+          <div class="number19 number">19</div>
+          <div class="number20 number">20</div>
+          <div class="number21 number">21</div>
+          <div class="number22 number">22</div>
+          <div class="number23 number">23</div>
+          <div class="number24 number">24</div>
+          <div class="number25 number">25</div>
+          <div class="number26 number">26</div>
+          <div class="number27 number">27</div>
+          <div class="number28 number">28</div>
+          <div class="number29 number">29</div>
+          <div class="number30 number">30</div>
+          <div class="number31 number">31</div>
+          <div class="number32 number">32</div>
+          <div class="number33 number">33</div>
+          <div class="number34 number">34</div>
+          <div class="number35 number">35</div>
+          <div class="number36 number">36</div>
+          <div class="number37 number">37</div>
+          <div class="number38 number">38</div>
+          <div class="number39 number">39</div>
+          <div class="number40 number">40</div>
+          <div class="number41 number">41</div>
+          <div class="number42 number">42</div>
+          <div class="number43 number">43</div>
+          <div class="number44 number">44</div>
+          <div class="number45 number">45</div>
+          <div class="number46 number">46</div>
+          <div class="number47 number">47</div>
+          <div class="number48 number">48</div>
+          <div class="number49 number">49</div>
+          <div class="number50 number">50</div>
+          <div class="number51 number">51</div>
+          <div class="number52 number">52</div>
+          <div class="number53 number">53</div>
+          <div class="number54 number">54</div>
+          <div class="number55 number">55</div>
+          <div class="number56 number">56</div>
+          <div class="number57 number">57</div>
+          <div class="number58 number">58</div>
+          <div class="number59 number">59</div>
+          <div class="number60 number">60</div>
+          <div class="number61 number">61</div>
+          <div class="number62 number">62</div>
+          <div class="number63 number">63</div>
+          <div class="number64 number">64</div>
+          <div class="number65 number">65</div>
+          <div class="number66 number">66</div>
+          <div class="number67 number">67</div>
+          <div class="number68 number">68</div>
+          <div class="number69 number">69</div>
+          <div class="number70 number">70</div>
+          <div class="number71 number">71</div>
+          <div class="number72 number">72</div>
+          <div class="number73 number">73</div>
+          <div class="number74 number">74</div>
+          <div class="number75 number">75</div>
+          <div class="number76 number">76</div>
+          <div class="number77 number">77</div>
+          <div class="number78 number">78</div>
+          <div class="number79 number">79</div>
+          <div class="number80 number">80</div>
+          <div class="number81 number">81</div>
+          <div class="number82 number">82</div>
+          <div class="number83 number">83</div>
+          <div class="number84 number">84</div>
+          <div class="number85 number">85</div>
+          <div class="number86 number">86</div>
+          <div class="number87 number">87</div>
+          <div class="number88 number">88</div>
+          <div class="number89 number">89</div>
+          <div class="number90 number">90</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="containerHeading">
+          <p>Players</p>
+        </div>
+        <div class="addPlayers">
+          <input type="text" placeholder="Add Players" maxlength="20" />
+          <button onclick="addPlayer()" type="submit">Add Player</button>
+        </div>
+        <p class="redWarning"></p>
+        <p class="warning">
+          *Please do not use duplicate names, it may leads to inaccuracy*
+        </p>
+        <div class="players">
+          
+        </div>
+      </div>
+    </section>
+    <section class="participantPage">
+      <div class="container ticketSelector">
+        <div class="containerHeading">
+          <p>Players</p>
+        </div>
+        <div class="ticketCountContainer">
+          <span class="ticketCountHeading">
+            how many tickets do you want?
+          </span>
+          <select name="numberOfTickets" id="numberOfTickets">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <button onclick="numberOfTickets();document.querySelector('.ticketSelector').style.display=`none`;">Submit</button>
+        </div>
+      </div>
+      <div class="container tickets">
+        <div class="containerHeading">
+          <p>
+            Tickets
+          </p>
+        </div>
+        <div class="ticket1">
+          <div class="ticketNumbers">
+            <div class="ticketNumber10 ticketNumber"></div>
+            <div class="ticketNumber11 ticketNumber"></div>
+            <div class="ticketNumber12 ticketNumber"></div>
+            <div class="ticketNumber13 ticketNumber"></div>
+            <div class="ticketNumber14 ticketNumber"></div>
+            <div class="ticketNumber15 ticketNumber"></div>
+            <div class="ticketNumber16 ticketNumber"></div>
+            <div class="ticketNumber17 ticketNumber"></div>
+            <div class="ticketNumber18 ticketNumber"></div>
+            <div class="ticketNumber20 ticketNumber"></div>
+            <div class="ticketNumber21 ticketNumber"></div>
+            <div class="ticketNumber22 ticketNumber"></div>
+            <div class="ticketNumber23 ticketNumber"></div>
+            <div class="ticketNumber24 ticketNumber"></div>
+            <div class="ticketNumber25 ticketNumber"></div>
+            <div class="ticketNumber26 ticketNumber"></div>
+            <div class="ticketNumber27 ticketNumber"></div>
+            <div class="ticketNumber28 ticketNumber"></div>
+            <div class="ticketNumber30 ticketNumber"></div>
+            <div class="ticketNumber31 ticketNumber"></div>
+            <div class="ticketNumber32 ticketNumber"></div>
+            <div class="ticketNumber33 ticketNumber"></div>
+            <div class="ticketNumber34 ticketNumber"></div>
+            <div class="ticketNumber35 ticketNumber"></div>
+            <div class="ticketNumber36 ticketNumber"></div>
+            <div class="ticketNumber37 ticketNumber"></div>
+            <div class="ticketNumber38 ticketNumber"></div>
+          </div>
+        </div>
+        <div class="ticket2">
+          <div class="ticketNumbers">
+            <div class="ticketNumber10 ticketNumber"></div>
+            <div class="ticketNumber11 ticketNumber"></div>
+            <div class="ticketNumber12 ticketNumber"></div>
+            <div class="ticketNumber13 ticketNumber"></div>
+            <div class="ticketNumber14 ticketNumber"></div>
+            <div class="ticketNumber15 ticketNumber"></div>
+            <div class="ticketNumber16 ticketNumber"></div>
+            <div class="ticketNumber17 ticketNumber"></div>
+            <div class="ticketNumber18 ticketNumber"></div>
+            <div class="ticketNumber20 ticketNumber"></div>
+            <div class="ticketNumber21 ticketNumber"></div>
+            <div class="ticketNumber22 ticketNumber"></div>
+            <div class="ticketNumber23 ticketNumber"></div>
+            <div class="ticketNumber24 ticketNumber"></div>
+            <div class="ticketNumber25 ticketNumber"></div>
+            <div class="ticketNumber26 ticketNumber"></div>
+            <div class="ticketNumber27 ticketNumber"></div>
+            <div class="ticketNumber28 ticketNumber"></div>
+            <div class="ticketNumber30 ticketNumber"></div>
+            <div class="ticketNumber31 ticketNumber"></div>
+            <div class="ticketNumber32 ticketNumber"></div>
+            <div class="ticketNumber33 ticketNumber"></div>
+            <div class="ticketNumber34 ticketNumber"></div>
+            <div class="ticketNumber35 ticketNumber"></div>
+            <div class="ticketNumber36 ticketNumber"></div>
+            <div class="ticketNumber37 ticketNumber"></div>
+            <div class="ticketNumber38 ticketNumber"></div>
+          </div>
+        </div>
+        <div class="ticket3">
+          <div class="ticketNumbers">
+            <div class="ticketNumber10 ticketNumber"></div>
+            <div class="ticketNumber11 ticketNumber"></div>
+            <div class="ticketNumber12 ticketNumber"></div>
+            <div class="ticketNumber13 ticketNumber"></div>
+            <div class="ticketNumber14 ticketNumber"></div>
+            <div class="ticketNumber15 ticketNumber"></div>
+            <div class="ticketNumber16 ticketNumber"></div>
+            <div class="ticketNumber17 ticketNumber"></div>
+            <div class="ticketNumber18 ticketNumber"></div>
+            <div class="ticketNumber20 ticketNumber"></div>
+            <div class="ticketNumber21 ticketNumber"></div>
+            <div class="ticketNumber22 ticketNumber"></div>
+            <div class="ticketNumber23 ticketNumber"></div>
+            <div class="ticketNumber24 ticketNumber"></div>
+            <div class="ticketNumber25 ticketNumber"></div>
+            <div class="ticketNumber26 ticketNumber"></div>
+            <div class="ticketNumber27 ticketNumber"></div>
+            <div class="ticketNumber28 ticketNumber"></div>
+            <div class="ticketNumber30 ticketNumber"></div>
+            <div class="ticketNumber31 ticketNumber"></div>
+            <div class="ticketNumber32 ticketNumber"></div>
+            <div class="ticketNumber33 ticketNumber"></div>
+            <div class="ticketNumber34 ticketNumber"></div>
+            <div class="ticketNumber35 ticketNumber"></div>
+            <div class="ticketNumber36 ticketNumber"></div>
+            <div class="ticketNumber37 ticketNumber"></div>
+            <div class="ticketNumber38 ticketNumber"></div>
+          </div>
+        </div>
+        <div class="ticket4">
+          <div class="ticketNumbers">
+            
+            <div class="ticketNumber10 ticketNumber"></div>
+            <div class="ticketNumber11 ticketNumber"></div>
+            <div class="ticketNumber12 ticketNumber"></div>
+            <div class="ticketNumber13 ticketNumber"></div>
+            <div class="ticketNumber14 ticketNumber"></div>
+            <div class="ticketNumber15 ticketNumber"></div>
+            <div class="ticketNumber16 ticketNumber"></div>
+            <div class="ticketNumber17 ticketNumber"></div>
+            <div class="ticketNumber18 ticketNumber"></div>
+            <div class="ticketNumber20 ticketNumber"></div>
+            <div class="ticketNumber21 ticketNumber"></div>
+            <div class="ticketNumber22 ticketNumber"></div>
+            <div class="ticketNumber23 ticketNumber"></div>
+            <div class="ticketNumber24 ticketNumber"></div>
+            <div class="ticketNumber25 ticketNumber"></div>
+            <div class="ticketNumber26 ticketNumber"></div>
+            <div class="ticketNumber27 ticketNumber"></div>
+            <div class="ticketNumber28 ticketNumber"></div>
+            <div class="ticketNumber30 ticketNumber"></div>
+            <div class="ticketNumber31 ticketNumber"></div>
+            <div class="ticketNumber32 ticketNumber"></div>
+            <div class="ticketNumber33 ticketNumber"></div>
+            <div class="ticketNumber34 ticketNumber"></div>
+            <div class="ticketNumber35 ticketNumber"></div>
+            <div class="ticketNumber36 ticketNumber"></div>
+            <div class="ticketNumber37 ticketNumber"></div>
+            <div class="ticketNumber38 ticketNumber"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="rulePage">
+      <div class="container">
+        <div class="containerHeading">
+          <p>Rules</p>
+        </div>
+        <div class="rulesContent">
+          <ol>
+            <li>
+              Tickets & Numbers
+              <ul>
+                <li>Each ticket consists of 15 random numbers between 1 and 90, arranged in a 3x9 grid.</li>
+                <li>Each column contains numbers within a fixed range (e.g., 1-10 in the first column, 11-20 in the second, etc.).</li>
+              </ul>
+            </li>
+            <li>
+              Number Calling
+              <ul>
+                <li>A caller picks random numbers (1-90) and announces them.</li>
+                <li>Once a number is called, players mark it on their tickets if it appears.</li>
+              </ul>
+            </li>
+            <li>
+              Winning Combinations
+              <ul>
+                <li>The game has multiple winning patterns such as Early Five, Top Line, Middle Line, Bottom Line, Corners, Full House, etc.</li>
+                <li>A player must claim a win as soon as they achieve a pattern. Late claims are invalid.</li>
+              </ul>
+            </li>
+            <li>
+              Verification
+              <ul>
+                <li>When a player claims a win, their ticket is verified.</li>
+                <li>If the claim is valid, the player wins the respective prize.</li>
+                <li>If the claim is incorrect (false claim), it is rejected, and the player may be disqualified based on house rules.</li>
+              </ul>
+            </li>
+            <li>
+              Multiple Winners
+              <ul>
+                <li>If more than one player claims the same pattern at the same time, the prize may be shared or decided by an additional rule (e.g., lucky draw).</li>
+              </ul>
+            </li>
+            <li>
+              Game Continuation
+              <ul>
+                <li>The game continues until all predefined prizes are claimed.</li>
+                <li>The final prize, usually Full House, is awarded when all numbers on a ticket are marked.</li>
+              </ul>
+            </li>
+            <li>
+              House Rules
+              <ul>
+                <li>Any additional rules set by the organizer (e.g., claim deadlines, prize distribution, penalties) must be followed.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="howToPlayPage">
+      <div class="container">
+        <div class="containerHeading">
+          <p>How to play?</p>
+        </div>
+        <div class="howToPlayContent">
+          <ol>
+            <li>
+              Decide on the winning point for the game.
+              <ul>
+                <li>The winning point of the game is the rule that determines how a player can win. The caller will let everyone know before playing the game what the winning point is. A popular winning point for tambola games is full house, which means that the ticket with all of the numbers struck first wins.</li>
+                <li>Early 5 is another common winning point option. The player who first strikes 5 numbers in any row wins. This is best if you only want to play a short game.</li>
+                <li>First row is another winning point alternative. This means that the player who is first to strike all of the numbers along the top row wins.</li>
+                <li>Corners is another winning point option if you want to play a short game. The player who can strike each number in the 4 corners of the ticket first, wins. This means that the first and last numbers of the top and bottom rows will be crossed out.</li>
+                <li>There are many variations on what the winning point can be for the game. If you are organizing the game, feel free to make up your own winning point, or explore the many ideas available either online or with other tambola players.</li>
+              </ul>
+              </li>
+              <li>
+                Designate a tambola caller.
+                <ul>
+                  <li>Choose a person who is confident and can speak loudly and clearly. They will be responsible for drawing out the numbers and calling them to the audience.</li>
+                  <li>This person will also be responsible for verifying any potential winning tickets to make sure that the numbers are correct.</li>
+                  <li>The caller doesn’t have to be the caller for all of the rounds. If you are playing multiple rounds of tambola, pick a different caller for each round so that everyone can have a turn to play.</li>
+                </ul>
+              </li>
+              <li>             
+Give each player a tambola ticket.
+                <ul>
+                  <li>Each player will need a new ticket for each round. If you are playing informally with family or friends, hand a ticket out to each person. If you are playing a commercial game, each player will purchase their own ticket before the game begins.</li>
+                  <li>Tambola tickets have 3 horizontal rows and 9 vertical columns, which makes 27 boxes in total. There are 5 numbers in each horizontal row, with the remaining 4 boxes randomly blocked out. The first column has numbers from 1-9, the second from 10-19, and so on, up to the number 90.</li>
+                  <li>You can purchase tambola tickets online, or you can make your own using a random number generator.</li>
+                  <li>Make sure that each person has a pen or pencil before the game begins so that they can cross off the numbers as they are called</li>
+                </ul>
+              </li>
+              <li>Set up the box or container that holds the numbers.
+                <ul>
+                  <li>Place all of the numbers from 1-90 into the container. Make sure that the sides of the box aren’t transparent so that the caller can’t see what number they are drawing. Fit the lid to the box so that the caller can shake the box before calling each number.</li>
+                  <li>If you are playing at a big, commercial game, there will usually be a machine that will draw the numbers for the caller.</li>
+                </ul>
+              </li>
+              <li>Draw a number and call it out to the audience if you are the caller.
+                <ul>
+                  <li>Shake the box containing the numbers, and choose 1 without looking at it. Read the number loudly and clearly to everyone playing, so that they can strike it off their ticket if necessary.</li>
+                  <li>Some experienced callers like to use nicknames for the numbers that they read out to make the game more fun. However, they will always say the actual name for the number too.</li>
+                  <li>Some nicknames for the numbers include “Lone ranger” for the number 1, “Colors of the rainbow” for the number 7, and “Valentine’s Day” for the number 14.</li>
+                  <li>If you play tambola regularly with family or friends, come up with your own nickname for each number to make the game more interesting.</li>
+                </ul>
+              </li>
+              <li>
+                Strike the numbers off as they are called if you are playing the game.
+                <ul>
+                  <li>As the caller reads out each number, check the appropriate column to see if you can strike a number off. If you don’t have the number that has been called out on your ticket, wait for the next number to be called.</li>
+                </ul>
+              </li>
+              <li>Claim for the winning point if you think you have one.
+                <ul>
+                  <li>Be ready to stand up and shout if you think that you have won the game! Often you can only win the game if you announce that you have won immediately, rather than waiting until after the next number has been called.</li>
+                  <li>If you miss your chance to announce that you have won, you will usually miss out on your entitlement to the prize.</li>
+                  <li>More than 1 person may realize that they have the winning point after a number is called. In this case, the first person to announce it goes to the caller to have their ticket verified.</li>
+                </ul>
+              </li>
+              <li>
+                Verify the winning point if you are the caller.
+              <ul>
+                <li> Check the tambola ticket to see if the winning point has been awarded by the last number called. Announce to the group playing if that particular player has won or not.</li>
+                <li>If the player has won, this often ends the game. However you can decide to keep playing if you want to draw for second and third prizes.
+                  <li>If the player doesn’t have a winning point, keep calling numbers and playing the game until someone wins.</li>
+                </li>
+              </ul></li>
+              <li>
+                Award the prize to the winner.
+              <ul>
+                <li>If there are prizes for the winning ticket or tickets, give these out to the players. The prizes are usually cash.</li>
+                <li>For an informal game with family or friends, you can be more creative with the prizes. Try a voucher to a local restaurant, a delicious treat, a flower bouquet, or a certificate with the winners name on it.</li>
+              </ul></li>
+          </ol>
+          <p>Source: <a style="color: green;" href="https://www.wikihow.com/Play-Tambola" target="_blank">wikihow</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="container">
+        <div class="containerHeading">
+          <p>About</p>
+        </div>
+        <div class="aboutContent">
+          <p>Tambola, also known as Housie or Bingo, is a popular number-based game of chance that has been enjoyed worldwide for centuries.</p>
+          <h3>Origin & History</h3>
+          <p>Tambola traces its origins back to 16th-century Italy, where it was initially known as “Lo Giuoco del Lotto d'Italia” (The Italian Lottery). By the 18th century, the game spread to France, where it became popular among aristocrats as "Le Lotto." It later evolved in the United Kingdom as "Housie" and in the United States as "Bingo," gaining immense popularity.
+            </p><p>
+            In India, Tambola became a favorite pastime, especially at social gatherings, clubs, and community events. It remains a staple game in parties, corporate events, and online gaming platforms.</p>
+            <h3>How Tambola Became Popular?</h3>
+            <p>Tambola gained widespread recognition due to its simple rules, fun gameplay, and social appeal. Unlike traditional lotteries, it allows players to interact while playing, making it an engaging and enjoyable experience. With the rise of technology, Tambola has also moved online, allowing people to play virtually from anywhere in the world.</p>
+            <p>Today, Tambola is played with friends, family, and colleagues, making it a timeless game that continues to bring people together across generations!</p>
+        </div>
+        </div>
+    </section>
+    <!-- footer  -->
+    <footer>
+      Made with <i class="ri-heart-fill"></i> by&nbsp;
+      <a href="">Archit Goel</a>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="/announceScript.js"></script>
+    <script src="/participantsScript.js"></script>
+  </body>
+</html>
