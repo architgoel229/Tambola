@@ -115,7 +115,7 @@ nav{
 
 .menu i{
     padding: 10px;
-   
+    cursor: pointer;
 }
 
 .menu i.ri-moon-fill{
